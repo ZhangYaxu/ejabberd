@@ -1,7 +1,7 @@
-REBAR = /startalk/erlang1903/lib/erlang/bin/escript rebar
+REBAR = /usr/local/lib/erlang/bin/escript rebar
 INSTALL = /usr/bin/install -c
-SED = /usr/bin/sed
-ERL = /startalk/erlang1903/bin/erl
+SED = /bin/sed
+ERL = /usr/local/bin/erl
 
 prefix = /startalk/ejabberd
 exec_prefix = ${prefix}
@@ -184,8 +184,8 @@ install: all copy-files
 		-e "s*{{sysconfdir}}*${prefix}/etc*" \
 		-e "s*{{localstatedir}}*${prefix}/var*" \
 		-e "s*{{docdir}}*${datarootdir}/doc/${PACKAGE_TARNAME}*" \
-		-e "s*{{erl}}*/startalk/erlang1903/bin/erl*" \
-		-e "s*{{epmd}}*/startalk/erlang1903/bin/epmd*" ejabberdctl.template \
+		-e "s*{{erl}}*/usr/local/bin/erl*" \
+		-e "s*{{epmd}}*/usr/local/bin/epmd*" ejabberdctl.template \
 		> ejabberdctl.example
 	[ -f $(ETCDIR)/ejabberdctl.cfg ] \
 		&& $(INSTALL) -b -m 640 $(G_USER) ejabberdctl.cfg.qunar $(ETCDIR)/ejabberdctl.cfg-new \
