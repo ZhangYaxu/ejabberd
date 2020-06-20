@@ -24,7 +24,7 @@
 extern "C" {
 #endif /* __cplusplus */
 
-#include "erl_nif.h"
+#include <erl_nif.h>
 
 
 #if ERL_NIF_MAJOR_VERSION == 0 && ERL_NIF_MINOR_VERSION == 1

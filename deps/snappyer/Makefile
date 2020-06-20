@@ -4,8 +4,9 @@ PROJECT_VERSION = 1.2.1
 
 SP = 2
 
-CPPFLAGS = -Wno-sign-compare -Wno-unused-function
-LDFLAGS += -shared -lstdc++
+CPPFLAGS = -Wno-sign-compare -Wno-unused-function -I/usr/local/lib/erlang/erts-8.3.5.6/include
+LDFLAGS += -shared -lstdc++ -L/usr/local/lib/erlang/usr/lib 
+                              
 
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Darwin)

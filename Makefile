@@ -1,9 +1,9 @@
 REBAR = /usr/local/lib/erlang/bin/escript rebar
 INSTALL = /usr/bin/install -c
-SED = /bin/sed
+SED = /usr/bin/sed
 ERL = /usr/local/bin/erl
 
-prefix = /startalk/ejabberd
+prefix = /
 exec_prefix = ${prefix}
 
 DESTDIR =
@@ -177,7 +177,7 @@ install: all copy-files
 	[ -f $(ETCDIR)/ejabberd.yml ] \
 		&& $(INSTALL) -b -m 640 $(G_USER) ejabberd.yml.qunar $(ETCDIR)/ejabberd.yml-new \
 		|| $(INSTALL) -b -m 640 $(G_USER) ejabberd.yml.qunar $(ETCDIR)/ejabberd.yml
-	$(SED) -e "s*{{rootdir}}*/startalk/ejabberd*" \
+	$(SED) -e "s*{{rootdir}}*/*" \
 		-e "s*{{installuser}}**" \
 		-e "s*{{bindir}}*${exec_prefix}/bin*" \
 		-e "s*{{libdir}}*${exec_prefix}/lib*" \
